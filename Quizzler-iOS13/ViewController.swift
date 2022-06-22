@@ -11,6 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textButtonFalse: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var textQuestion: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var questionBrain = QuizBrain()
     
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
     @objc func updateQuestion() {
         //precisa criar uma funcao para pegar os valores porque apenas a copia nao resolve
         textQuestion.text = questionBrain.getCurrrentQuestion()
+        scoreLabel.text = questionBrain.getCurrentScore()
         let progressCurrent = questionBrain.getCurrentProgress()
         //self.textButtonTrue.setTitleColor(UIColor.white, for: .normal)
         self.textButtonTrue.backgroundColor = UIColor.clear

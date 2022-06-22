@@ -24,11 +24,17 @@ struct QuizBrain {
         Question(q: "Chocolate affects a dog's heart and nervous system; a few ounces are enough to kill a small dog.", a: "True")
     ]
     var questionNumber = 0
+    var scoreNumber = 0
     
     //se colocar o _ nao preciso chamar o parametro externo
     //sem ele quem estiver chamdno a funcao deveria fazer (userAnswer)
-    func checkAnswerUser(_ userAnswer:String) -> Bool {
-        return  userAnswer == allQuestion[questionNumber].anwser
+    mutating func checkAnswerUser(_ userAnswer:String) -> Bool {
+        if  userAnswer == allQuestion[questionNumber].anwser {
+            scoreNumber += 1
+            return true
+        }else {
+            return false
+        }
     }
     
     func getCurrrentQuestion() -> String {
@@ -47,8 +53,13 @@ struct QuizBrain {
             questionNumber += 1
             
         }else {
+            scoreNumber = 0
             questionNumber = 0
         }
+    }
+    
+    func getCurrentScore() -> String {
+        return "Score: \(scoreNumber)"
     }
     
 }
