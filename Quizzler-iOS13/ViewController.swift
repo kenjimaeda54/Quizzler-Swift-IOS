@@ -2,6 +2,9 @@
 //  ViewController.swift
 //  Quizzler-iOS13
 //
+//  Created by kenjimaeda on 21/06/22.
+//  Copyright © 2022 The App Brewery. All rights reserved.
+//
 
 import UIKit
 
